@@ -44,7 +44,7 @@ findata[,2] <- actnames[match(findata[,2],actnames[,1]),2]
 ##-- Summarizing by Subject Ids and Activities --##
 fintable <- data.table(findata)
 output <- fintable %>% group_by(SubjectId, ActivityNames) %>% summarize_each(funs(mean))
-
+write.table(output, "Output.txt", row.names = FALSE)
 ## -- Final Output
 
 
